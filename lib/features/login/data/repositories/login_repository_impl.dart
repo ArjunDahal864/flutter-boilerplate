@@ -50,7 +50,7 @@ class LoginRepositoryImpl implements LoginRepository {
         return Left(UnknownFailure(e.toString()));
       }
     } else {
-      return Left( NetworkFailure("No Internet Connection"));
+      return const Left( NetworkFailure("No Internet Connection"));
     }
   }
 
@@ -59,11 +59,11 @@ class LoginRepositoryImpl implements LoginRepository {
     var availableBioMetrics =
         await localAuthentication.getAvailableBiometrics();
     if (availableBioMetrics.isEmpty) {
-      return Left(AuthenticationFailure("No Biometrics Available"));
+      return const Left(AuthenticationFailure("No Biometrics Available"));
     }
     var isDeviceSupported = await localAuthentication.isDeviceSupported();
     if (!isDeviceSupported) {
-      return Left(DeviceNotSupportedFailure("Device not supported"));
+      return const Left(DeviceNotSupportedFailure("Device not supported"));
     }
     try {
       var response = await localAuthentication.authenticate(
@@ -71,7 +71,7 @@ class LoginRepositoryImpl implements LoginRepository {
       if (response) {
         return const Right(true);
       } else {
-        return Left(AuthenticationFailure("Authentication Failed"));
+        return const Left(AuthenticationFailure("Authentication Failed"));
       }
     } on PlatformException catch (e) {
       return Left(UnknownFailure(e.toString()));

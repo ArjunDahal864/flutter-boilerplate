@@ -3,7 +3,7 @@ import 'package:boiler/core/utils/constants.dart';
 import 'package:boiler/features/onboarding/data/models/on_boarding_model.dart';
 
 abstract class OnBoardingRemoteDataSource {
-  Future<bool> saveOnBoardingData(OnBoardingModel onBoardingModel);
+  Future<void> saveOnBoardingData(OnBoardingModel onBoardingModel);
 }
 
 class OnBoardingRemoteDataSourceImpl implements OnBoardingRemoteDataSource {
@@ -11,13 +11,8 @@ class OnBoardingRemoteDataSourceImpl implements OnBoardingRemoteDataSource {
 
   OnBoardingRemoteDataSourceImpl({required this.networkCalls});
   @override
-  Future<bool> saveOnBoardingData(OnBoardingModel onBoardingModel) async {
-    try {
-      await networkCalls.post(
-          url: kOnbaordingURL, data: onBoardingModel.toJson());
-      return true;
-    } catch (e) {
-      return false;
-    }
+  Future<void> saveOnBoardingData(OnBoardingModel onBoardingModel) async {
+    await networkCalls.post(
+        url: kOnbaordingURL, data: onBoardingModel.toJson());
   }
 }

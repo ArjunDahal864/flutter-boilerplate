@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:boiler/core/error/exceptions.dart';
 import 'package:boiler/core/utils/constants.dart';
 import 'package:boiler/features/theme/data/models/application_theme_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,7 +27,6 @@ class ApplicationThemeLocalDataSourceImpl
   Future<ApplicationThemeModel> getApplicationTheme() async {
     var response = sharedPreferences.getString(kTheme) ??
         json.encode(const ApplicationThemeModel(name: kLightTheme).toJson());
-    print(ApplicationThemeModel.fromJson(jsonDecode(response)).name);
     return ApplicationThemeModel.fromJson(jsonDecode(response));
   }
 }

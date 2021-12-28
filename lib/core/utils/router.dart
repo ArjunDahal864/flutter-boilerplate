@@ -8,7 +8,6 @@ import 'package:boiler/features/locale/presentation/pages/locale_page.dart';
 import 'package:boiler/features/login/presentation/pages/login_page.dart';
 import 'package:boiler/features/onboarding/presentation/pages/on_boarding_page.dart';
 import 'package:boiler/features/profile/presentation/pages/profile_page.dart';
-import 'package:boiler/features/register/presentation/pages/register_page.dart';
 import 'package:boiler/features/settings/presentation/pages/settings_page.dart';
 import 'package:boiler/features/theme/presentation/pages/theme_page.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,6 @@ part 'router.gr.dart';
   routes: <AutoRoute>[
     AutoRoute(path: "/", page: OnBoardingPage, initial: true),
     AutoRoute(path: kLoginPage, page: LoginPage),
-    AutoRoute(path: kRegisterPage, page: RegisterPage),
     // home page
     AutoRoute(
       path: kHomePage,

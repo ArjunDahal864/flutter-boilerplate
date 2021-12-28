@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:boiler/core/error/failure.dart';
 import 'package:boiler/core/usecase/usecase.dart';
+import 'package:boiler/features/onboarding/domain/entities/on_boarding.dart';
 import 'package:boiler/features/onboarding/domain/usecases/get_on_boarding.dart';
 import 'package:boiler/features/onboarding/domain/usecases/set_on_boarding.dart';
 import 'package:equatable/equatable.dart';
@@ -19,7 +20,7 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
       response.fold(
         (Failure failure) =>
             emit(OnBoardingErrorState(errorMessage: failure.msg)),
-        (bool onBoarding) => onBoarding
+        (OnBoarding onBoarding) => onBoarding.isOnBoardingCompleted
             ? emit(OnBoardingCompletedState())
             : emit(OnBoardingInitialState()),
       );
@@ -29,7 +30,7 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
       response.fold(
         (Failure failure) =>
             emit(OnBoardingErrorState(errorMessage: failure.msg)),
-        (bool onBoarding) => onBoarding
+        (OnBoarding onBoarding) => onBoarding.isOnBoardingCompleted
             ? emit(OnBoardingCompletedState())
             : emit(OnBoardingInitialState()),
       );
@@ -40,7 +41,7 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
       response.fold(
           (Failure failure) =>
               emit(OnBoardingErrorState(errorMessage: failure.msg)),
-          (bool done) => done
+          (OnBoarding done) => done.isOnBoardingCompleted
               ? emit(OnBoardingCompletedState())
               : emit(const OnBoardingErrorState(
                   errorMessage: "cannot save onbaording value")));
