@@ -13,25 +13,53 @@ class SettingsPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               InkWell(
-                onTap: (){
+                onTap: () {
                   context.router.push(const ThemeRoute());
                 },
                 child: Container(
                   alignment: Alignment.center,
                   height: 80,
+                  padding: const EdgeInsets.all(18.0),
+                  margin: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 5),
+                        )
+                      ],
+                      color: Theme.of(context).primaryColor),
                   width: double.infinity,
-                  child: Text(S.of(context).theme),
+                  child: Text(S.of(context).theme,
+                      style: Theme.of(context).textTheme.headline4),
                 ),
               ),
               InkWell(
                 child: Container(
-                  alignment: Alignment.center,
-                  width: double.infinity,
-                    height:60,child: Text(S.of(context).language)),
-                onTap: (){
+                    alignment: Alignment.center,
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(18.0),
+                    margin: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            blurRadius: 10,
+                            offset: const Offset(0, 5),
+                          )
+                        ],
+                        color: Theme.of(context).primaryColor),
+                    height: 80,
+                    child: Text(
+                      S.of(context).language,
+                      style: Theme.of(context).textTheme.headline4,
+                    )),
+                onTap: () {
                   context.router.push(const LocaleRoute());
                 },
               )
