@@ -213,6 +213,7 @@
 └── main.dart
 
 ```
+
 ### packages,plugins and library 
 ```
 dependencies:
@@ -313,6 +314,12 @@ flutter:
 flutter_intl:
   enabled: true
 ```
-
+#### flutter version
+```
+Flutter 2.5.3 
+Framework • revision 18116933e7 (3 months ago) • 2021-10-15 10:46:35 -0700
+Engine • revision d3ea636dc5
+Tools • Dart 2.14.4
+```
 
 
