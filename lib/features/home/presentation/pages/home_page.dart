@@ -12,9 +12,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       appBarBuilder: (_, tabsRouter) => AppBar(
-        title: const Text('Home'),
+        title: const Text("Boiler Project"),
+
         leading: const AutoBackButton(),
         centerTitle: true,
+
       ),
       routes: const [
         DashboardPageRouter(),

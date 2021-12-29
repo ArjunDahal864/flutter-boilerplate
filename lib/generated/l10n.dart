@@ -89,6 +89,46 @@ class S {
       args: [],
     );
   }
+
+  /// `theme`
+  String get theme {
+    return Intl.message(
+      'theme',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `language`
+  String get language {
+    return Intl.message(
+      'language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Theme`
+  String get darkTheme {
+    return Intl.message(
+      'Dark Theme',
+      name: 'darkTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light Theme`
+  String get lightTheme {
+    return Intl.message(
+      'Light Theme',
+      name: 'lightTheme',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

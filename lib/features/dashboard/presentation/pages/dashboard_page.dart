@@ -1,3 +1,4 @@
+import 'package:boiler/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -8,15 +9,11 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const Expanded(
+           Expanded(
             child: Center(
-              child: Text('Dashboard'),
+              child: Text(S.of(context).dashboard),
             ),
           ),
-          MaterialButton(
-            child: const Text('Go to settings'),
-            onPressed: () {},
-          )
         ],
       ),
     );

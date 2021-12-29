@@ -2,5 +2,9 @@
   "profile": "profile",
   "setting": "setting",
   "dashboard": "dashboard",
-  "welcome": "welcome"
+  "welcome": "welcome",
+  "theme": "theme",
+  "language": "language",
+  "darkTheme": "Dark Theme",
+  "lightTheme": "Light Theme"
 }

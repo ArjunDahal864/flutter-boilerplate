@@ -8,7 +8,7 @@ import 'package:boiler/features/locale/domain/entities/locale.dart';
 import 'package:boiler/features/locale/domain/repositories/locale_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class LocaleRepositoryImpl extends LocaleReposiotry {
+class LocaleRepositoryImpl extends LocaleRepository {
   final LocaleLocalDataSource localDataSource;
   final LocaleRemoteDataSource localeRemoteDataSource;
   final NetworkInfo networkInfo;

@@ -5,11 +5,13 @@ class AppThemes {
   static ThemeData lightTheme = ThemeData(
     primaryColor: Colors.red,
     brightness: Brightness.light,
-    backgroundColor: Colors.red,
+    backgroundColor: Colors.white,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
-      color: Colors.red,
+      color: Colors.white,
       elevation: 0,
+      titleTextStyle: TextStyle(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.black),
     ),
     textTheme: const TextTheme(
       headline1: TextStyle(

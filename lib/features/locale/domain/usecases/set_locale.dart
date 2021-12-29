@@ -5,7 +5,7 @@ import 'package:boiler/features/locale/domain/repositories/locale_repository.dar
 import 'package:dartz/dartz.dart';
 
 class SetLocale implements UseCase<Locale,Locale>{
-  final LocaleReposiotry repository;
+  final LocaleRepository repository;
   const SetLocale({required this.repository});
   @override
   Future<Either<Failure, Locale>> call(Locale params) {

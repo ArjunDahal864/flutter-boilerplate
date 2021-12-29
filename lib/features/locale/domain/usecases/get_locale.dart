@@ -5,10 +5,10 @@ import 'package:boiler/features/locale/domain/repositories/locale_repository.dar
 import 'package:dartz/dartz.dart';
 
 class GetLocale implements UseCase<Locale, String> {
-  final LocaleReposiotry reposiotry;
-  const GetLocale({required this.reposiotry});
+  final LocaleRepository repository;
+  const GetLocale({required this.repository});
   @override
   Future<Either<Failure, Locale>> call(String uid)async {
-    return reposiotry.getLocale(uid);
+    return repository.getLocale(uid);
   }
 }

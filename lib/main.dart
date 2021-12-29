@@ -48,6 +48,7 @@ class _ApplicationState extends State<Application> {
   @override
   void initState() {
     BlocProvider.of<ThemeBloc>(context).add(ThemeStatusEvent());
+    BlocProvider.of<LocaleBloc>(context).add(LocaleStatusEvent());
     super.initState();
   }
 
@@ -59,53 +60,35 @@ class _ApplicationState extends State<Application> {
       builder: (context, state) {
         return BlocBuilder<LocaleBloc, LocaleState>(
           builder: (context, localeState) {
-            if (state is ThemeLoadedState) {
-              if(localeState is LocaleLoadedState){
-                return MaterialApp.router(
-                    title: 'Boiler',
-                    localizationsDelegates: const [
-                      S.delegate,
-                      GlobalMaterialLocalizations.delegate,
-                      GlobalWidgetsLocalizations.delegate,
-                      GlobalCupertinoLocalizations.delegate,
-                    ],
-                    supportedLocales: S.delegate.supportedLocales,
-                    theme: state.theme.themeType == kLightTheme
-                        ? AppThemes.lightTheme
-                        : AppThemes.darkTheme,
-                    locale: Locale(localeState.locale.languageCode),
-                    debugShowCheckedModeBanner: false,
-                    routeInformationParser: _appRouter.defaultRouteParser(),
-                    routerDelegate: _appRouter.delegate());
-              }else{
-                return MaterialApp.router(
-                    title: 'Boiler',
-                    localizationsDelegates: const [
-                      S.delegate,
-                      GlobalMaterialLocalizations.delegate,
-                      GlobalWidgetsLocalizations.delegate,
-                      GlobalCupertinoLocalizations.delegate,
-                    ],
-                    theme: state.theme.themeType == kLightTheme
-                        ? AppThemes.lightTheme
-                        : AppThemes.darkTheme,
-                    debugShowCheckedModeBanner: false,
-                    routeInformationParser: _appRouter.defaultRouteParser(),
-                    routerDelegate: _appRouter.delegate());
-              }
+            if (state is ThemeLoadedState && localeState is LocaleLoadedState) {
+              return MaterialApp.router(
+                  title: 'Boiler',
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                  theme: state.theme.themeType == kLightTheme
+                      ? AppThemes.lightTheme
+                      : AppThemes.darkTheme,
+                  locale: Locale(localeState.locale.languageCode),
+                  debugShowCheckedModeBanner: false,
+                  routeInformationParser: _appRouter.defaultRouteParser(),
+                  routerDelegate: _appRouter.delegate());
             } else {
               return MaterialApp.router(
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                theme: AppThemes.lightTheme,
-                debugShowCheckedModeBanner: false,
-                routeInformationParser: _appRouter.defaultRouteParser(),
-                routerDelegate: _appRouter.delegate(),
-              );
+                  title: 'Boiler',
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  debugShowCheckedModeBanner: false,
+                  routeInformationParser: _appRouter.defaultRouteParser(),
+                  routerDelegate: _appRouter.delegate());
             }
           },
         );

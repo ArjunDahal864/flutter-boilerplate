@@ -140,7 +140,7 @@ Future<void> setupLocator() async {
           remoteDataSource: locator<OnBoardingRemoteDataSource>(),
           networkInfo: locator<NetworkInfo>()));
 
-  locator.registerLazySingleton<LocaleReposiotry>(() => LocaleRepositoryImpl(
+  locator.registerLazySingleton<LocaleRepository>(() => LocaleRepositoryImpl(
       localDataSource: locator<LocaleLocalDataSource>(),
       localeRemoteDataSource: locator<LocaleRemoteDataSource>(),
       networkInfo: locator<NetworkInfo>()));
@@ -189,10 +189,10 @@ Future<void> setupLocator() async {
         repository: locator<LoginRepository>(),
       ));
   locator.registerLazySingleton(() => GetLocale(
-        reposiotry: locator<LocaleReposiotry>(),
+        repository: locator<LocaleRepository>(),
       ));
   locator.registerLazySingleton(() => SetLocale(
-        repository: locator<LocaleReposiotry>(),
+        repository: locator<LocaleRepository>(),
       ));
 
   locator.registerFactory(() => OnBoardingBloc(

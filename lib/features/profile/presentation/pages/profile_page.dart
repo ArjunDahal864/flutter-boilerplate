@@ -1,3 +1,4 @@
+import 'package:boiler/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -9,7 +10,7 @@ class ProfilePage extends StatelessWidget {
       body: SafeArea(
         child: Container(
           alignment: Alignment.center,
-          child: const Text("Profile"),
+          child:  Text(S.of(context).profile),
         ),
       ),
     );

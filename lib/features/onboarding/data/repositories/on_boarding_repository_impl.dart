@@ -40,7 +40,7 @@ class OnBoardingRepositoryImpl implements OnBoardingRepository {
           isOnBoardingComplete: true,
           userDeviceID: await deviceInfo.getDeviceID(),
         );
-        await remoteDataSource.saveOnBoardingData(onBoardingModel);
+        // await remoteDataSource.saveOnBoardingData(onBoardingModel);
         await localDataSource.setIsOnBoardingComplete(onBoardingModel);
 
         return Right(OnBoarding(
