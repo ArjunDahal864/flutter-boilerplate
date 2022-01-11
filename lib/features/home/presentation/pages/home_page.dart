@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:boiler/core/utils/constants.dart';
 import 'package:boiler/core/utils/router.dart';
 import 'package:boiler/generated/l10n.dart';
 import 'package:flutter/material.dart';

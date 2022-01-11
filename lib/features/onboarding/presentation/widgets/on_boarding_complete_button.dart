@@ -2,7 +2,6 @@ import 'package:boiler/core/utils/constants.dart';
 import 'package:boiler/core/widgets/custom_snackbar.dart';
 import 'package:boiler/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 

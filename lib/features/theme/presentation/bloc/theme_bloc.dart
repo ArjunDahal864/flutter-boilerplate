@@ -5,7 +5,6 @@ import 'package:boiler/features/theme/domain/entities/application_theme.dart';
 import 'package:boiler/features/theme/domain/usecases/get_theme.dart';
 import 'package:boiler/features/theme/domain/usecases/set_theme.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 part 'theme_event.dart';
 part 'theme_state.dart';

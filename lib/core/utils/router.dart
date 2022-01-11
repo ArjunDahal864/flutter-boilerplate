@@ -1,4 +1,3 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:boiler/core/utils/constants.dart';
 import 'package:boiler/features/dashboard/presentation/pages/dashboard_page.dart';

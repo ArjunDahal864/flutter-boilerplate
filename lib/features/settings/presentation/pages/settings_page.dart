@@ -1,5 +1,5 @@
+// ignore: implementation_imports
 import 'package:auto_route/src/router/auto_router_x.dart';
-import 'package:boiler/core/utils/constants.dart';
 import 'package:boiler/core/utils/router.dart';
 import 'package:boiler/generated/l10n.dart';
 import 'package:flutter/material.dart';

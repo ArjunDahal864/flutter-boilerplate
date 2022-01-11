@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:boiler/core/error/exceptions.dart';
 import 'package:boiler/core/utils/constants.dart';
 import 'package:boiler/features/onboarding/data/models/on_boarding_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
