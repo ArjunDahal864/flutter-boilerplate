@@ -24,6 +24,7 @@ const String kProfileURL = 'profile/';
 const String kOnbaordingURL = 'onboarding/';
 const String kThemeURL = 'theme/';
 const String kLocaleURL = 'locale/';
+const String kRefreshTokenURL = 'refresh-token/';
 
 // ============ secrect key and storage keys / id =============
 const String kSecrectKey = 'secretKey';

@@ -7,6 +7,8 @@
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
+//
+// ignore_for_file: type=lint
 
 part of 'router.dart';
 
@@ -94,62 +96,72 @@ class _$AppRouter extends RootStackRouter {
       ];
 }
 
-/// generated route for [OnBoardingPage]
+/// generated route for
+/// [OnBoardingPage]
 class OnBoardingRoute extends PageRouteInfo<void> {
-  const OnBoardingRoute() : super(name, path: '/');
+  const OnBoardingRoute() : super(OnBoardingRoute.name, path: '/');
 
   static const String name = 'OnBoardingRoute';
 }
 
-/// generated route for [LoginPage]
+/// generated route for
+/// [LoginPage]
 class LoginRoute extends PageRouteInfo<void> {
-  const LoginRoute() : super(name, path: 'login');
+  const LoginRoute() : super(LoginRoute.name, path: 'login');
 
   static const String name = 'LoginRoute';
 }
 
-/// generated route for [HomePage]
+/// generated route for
+/// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
-      : super(name, path: 'home', initialChildren: children);
+      : super(HomeRoute.name, path: 'home', initialChildren: children);
 
   static const String name = 'HomeRoute';
 }
 
-/// generated route for [EmptyRouterPage]
+/// generated route for
+/// [EmptyRouterPage]
 class DashboardPageRouter extends PageRouteInfo<void> {
   const DashboardPageRouter({List<PageRouteInfo>? children})
-      : super(name, path: 'dashboard', initialChildren: children);
+      : super(DashboardPageRouter.name,
+            path: 'dashboard', initialChildren: children);
 
   static const String name = 'DashboardPageRouter';
 }
 
-/// generated route for [ProfilePage]
+/// generated route for
+/// [ProfilePage]
 class ProfilePageRouter extends PageRouteInfo<void> {
-  const ProfilePageRouter() : super(name, path: 'profile');
+  const ProfilePageRouter() : super(ProfilePageRouter.name, path: 'profile');
 
   static const String name = 'ProfilePageRouter';
 }
 
-/// generated route for [EmptyRouterPage]
+/// generated route for
+/// [EmptyRouterPage]
 class SettingsPageRouter extends PageRouteInfo<void> {
   const SettingsPageRouter({List<PageRouteInfo>? children})
-      : super(name, path: 'settings', initialChildren: children);
+      : super(SettingsPageRouter.name,
+            path: 'settings', initialChildren: children);
 
   static const String name = 'SettingsPageRouter';
 }
 
-/// generated route for [DashboardPage]
+/// generated route for
+/// [DashboardPage]
 class DashboardRoute extends PageRouteInfo<void> {
-  const DashboardRoute() : super(name, path: '');
+  const DashboardRoute() : super(DashboardRoute.name, path: '');
 
   static const String name = 'DashboardRoute';
 }
 
-/// generated route for [DashboardOption]
+/// generated route for
+/// [DashboardOption]
 class DashboardOptionRouter extends PageRouteInfo<DashboardOptionRouterArgs> {
   DashboardOptionRouter({Key? key, required DashboardOptionModel option})
-      : super(name,
+      : super(DashboardOptionRouter.name,
             path: ':option',
             args: DashboardOptionRouterArgs(key: key, option: option));
 
@@ -169,23 +181,26 @@ class DashboardOptionRouterArgs {
   }
 }
 
-/// generated route for [SettingsPage]
+/// generated route for
+/// [SettingsPage]
 class SettingsRoute extends PageRouteInfo<void> {
-  const SettingsRoute() : super(name, path: '');
+  const SettingsRoute() : super(SettingsRoute.name, path: '');
 
   static const String name = 'SettingsRoute';
 }
 
-/// generated route for [ThemePage]
+/// generated route for
+/// [ThemePage]
 class ThemeRoute extends PageRouteInfo<void> {
-  const ThemeRoute() : super(name, path: 'theme');
+  const ThemeRoute() : super(ThemeRoute.name, path: 'theme');
 
   static const String name = 'ThemeRoute';
 }
 
-/// generated route for [LocalePage]
+/// generated route for
+/// [LocalePage]
 class LocaleRoute extends PageRouteInfo<void> {
-  const LocaleRoute() : super(name, path: 'locale');
+  const LocaleRoute() : super(LocaleRoute.name, path: 'locale');
 
   static const String name = 'LocaleRoute';
 }

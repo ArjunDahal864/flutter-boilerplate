@@ -6,5 +6,6 @@
   "theme": "theme",
   "language": "language",
   "darkTheme": "Dark Theme",
-  "lightTheme": "Light Theme"
+  "lightTheme": "Light Theme",
+  "logout": "logout"
 }

@@ -9,6 +9,7 @@ abstract class LoginLocalDataSource {
   Future<LoginResponseModel> getLoginResponse();
   Future<void> saveLoginResponse(LoginResponseModel loginResponse);
   Future<void> deleteLoginResponse();
+  Future<bool> signOut();
 }
 
 class LoginLocalDataSourceImpl implements LoginLocalDataSource {
@@ -35,4 +36,11 @@ class LoginLocalDataSourceImpl implements LoginLocalDataSource {
    return secureStorage.write(
         key: kSecrectKey, value: json.encode(loginResponse.toJson()));
   }
+
+  @override
+ Future<bool> signOut()async {
+   await secureStorage.delete(key: kSecrectKey);
+   return true;
+  }
+
 }

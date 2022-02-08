@@ -2,6 +2,7 @@ import 'package:boiler/core/error/exceptions.dart';
 import 'package:boiler/core/network/network_info.dart';
 import 'package:boiler/features/login/data/datasources/login_local_data_source.dart';
 import 'package:boiler/features/login/data/datasources/login_remote_data_source.dart';
+import 'package:boiler/features/login/data/models/login_response_model.dart';
 import 'package:boiler/features/login/domain/entities/login_response.dart';
 import 'package:boiler/core/error/failure.dart';
 import 'package:boiler/features/login/domain/repositories/login_repository.dart';
@@ -20,18 +21,7 @@ class LoginRepositoryImpl implements LoginRepository {
       required this.remoteLoginDataSource,
       required this.localAuthentication,
       required this.networkInfo});
-
-  @override
-  Future<Either<Failure, LoginResponse>> getSavedLoginResponse() async {
-    try {
-      var response = await localLoginDataSource.getLoginResponse();
-      return Right(response);
-    } on AuthenticationException catch (e) {
-      return Left(AuthenticationFailure(e.toString()));
-    } catch (e) {
-      return Left(UnknownFailure(e.toString()));
-    }
-  }
+      
 
   @override
   Future<Either<Failure, LoginResponse>> emailAndPasswordLogin(
@@ -79,15 +69,31 @@ class LoginRepositoryImpl implements LoginRepository {
   }
 
   @override
-  Future<Either<Failure, void>> deleteSavedLoginResponse()async {
+  Future<Either<Failure, LoginResponse>> googleLogin()async {
     try{
-    var res = await localLoginDataSource.deleteLoginResponse();
-    return Right(res);
-    }on PlatformException catch (e){
-      return Left(DatabaseFailure(e.toString()));
-    }catch (e){
+      var response = await remoteLoginDataSource.googleLogin();
+      localLoginDataSource.saveLoginResponse(response);
+      return Right(response);
+    } on BadRequestException catch (e) {
+      return Left(BadRequestFailure(e.toString()));
+    } on InternalServerException catch (e) {
+      return Left(InternalServerFailure(e.toString()));
+    }catch(e){
       return Left(UnknownFailure(e.toString()));
     }
   }
 
+  @override
+  Future<Either<Failure, bool>> signOut() async {
+    try {
+      await remoteLoginDataSource.signOut();
+      await localLoginDataSource.signOut();
+      return const Right(true);
+    } on PlatformException catch (e) {
+      return Left(UnknownFailure(e.toString()));
+    } on Exception catch (e) {
+      return Left(UnknownFailure(e.toString()));
+    }
+  }
+  
 }

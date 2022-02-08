@@ -5,34 +5,23 @@ part 'login_response_model.g.dart';
 
 @JsonSerializable()
 class LoginResponseModel extends LoginResponse {
-  @JsonKey(name: 'access_token')
-  final String acToken;
-  @JsonKey(name: 'refresh_token')
-  final String reToken;
-  @JsonKey(name: 'user_id')
-  final String userID;
-  @JsonKey(name: 'role')
-  final String userRole;
-  @JsonKey(name: 'expires_in')
-  final int expiresAt;
-
-  const LoginResponseModel({
-    required this.reToken,
-    required this.acToken,
-    required this.userID,
-    required this.userRole,
-    required this.expiresAt,
-  
-  }) : super(
-          token: acToken,
-          refreshToken: reToken,
-          userId: userID,
-          role: userRole,
-          expiresIn: expiresAt,
-        );
-      
+  final String email;
+  final String displayName;
+  final String photoUrl;
+  final String uid;
+  final String idToken;
+  final String accessToken;
+ const LoginResponseModel({required this.email, required this.displayName, required this.photoUrl,required this.uid, required this.idToken, required this.accessToken}):super(
+   userDisplayName: displayName,
+    emailAddress: email,
+    userPhotoUrl: photoUrl,
+    userID: uid,
+    userIdToken: idToken,
+    userAccessToken: accessToken,
+ );
 
   factory LoginResponseModel.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseModelFromJson(json);
+
   Map<String, dynamic> toJson() => _$LoginResponseModelToJson(this);
 }

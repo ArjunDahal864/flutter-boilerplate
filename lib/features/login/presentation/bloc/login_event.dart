@@ -16,3 +16,4 @@ class LoginButtonPressedEvent extends LoginEvent {
 class GetSavedLoginEvent extends LoginEvent {}
 class DeleteSavedLoginEvent extends LoginEvent {}
 class LocalLoginButtonPressedEvent extends LoginEvent {}
+class GoogleLoginButtonPressedEvent extends LoginEvent {}

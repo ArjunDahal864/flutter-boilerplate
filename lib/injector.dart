@@ -7,10 +7,13 @@ import 'package:boiler/features/locale/data/datasources/locale_local_data_source
 import 'package:boiler/features/locale/data/repositories/locale_repository_impl.dart';
 import 'package:boiler/features/locale/domain/repositories/locale_repository.dart';
 import 'package:boiler/features/login/data/datasources/login_local_data_source.dart';
+import 'package:boiler/features/login/domain/usecases/logout.dart';
+import 'package:boiler/features/settings/presentation/bloc/settings_bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'features/login/data/datasources/login_remote_data_source.dart';
 import 'features/login/domain/repositories/login_repository.dart';
-import 'features/login/domain/usecases/delete_saved_login.dart';
-import 'features/login/domain/usecases/get_saved_login.dart';
+import 'features/login/domain/usecases/google_login.dart';
 import 'features/login/domain/usecases/local_login.dart';
 import 'features/login/domain/usecases/login.dart';
 import 'features/onboarding/data/datasources/on_boarding_local_data_sources.dart';
@@ -48,9 +51,24 @@ import 'features/theme/presentation/bloc/theme_bloc.dart';
 
 final locator = GetIt.instance;
 
+// SOLID
+// S - Single Responsibility Principle
+// O - Open/Closed Principle
+// L - Liskov Substitution Principle
+// I - Interface Segregation Principle
+// D - Dependency Inversion Principle
+
+
+// this file is for registering all the dependencies
+
+
 Future<void> setupLocator() async {
   // initialize hive
   await Hive.initFlutter();
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+  );
 
   // external layer
 
@@ -83,7 +101,7 @@ Future<void> setupLocator() async {
 
   // core
   locator.registerLazySingleton(() => NetworkCalls(
-        dio: locator<Dio>(),
+        dio: locator<Dio>()
       ));
 
   // Device info
@@ -179,21 +197,25 @@ Future<void> setupLocator() async {
   locator.registerLazySingleton(() => Login(
         repository: locator<LoginRepository>(),
       ));
-  locator.registerLazySingleton(() => GetSavedLogin(
-        repository: locator<LoginRepository>(),
-      ));
-  locator.registerLazySingleton(() => DeleteSavedLogin(
-        repository: locator<LoginRepository>(),
-      ));
+  locator.registerLazySingleton(() => Logout(
+    loginRepository: locator<LoginRepository>(),
+  ));
+
   locator.registerLazySingleton(() => LocalLogin(
         repository: locator<LoginRepository>(),
       ));
+
+  locator.registerLazySingleton(() => GoogleLogin(
+        loginRepository: locator<LoginRepository>(),
+      ));
+      
   locator.registerLazySingleton(() => GetLocale(
         repository: locator<LocaleRepository>(),
       ));
   locator.registerLazySingleton(() => SetLocale(
         repository: locator<LocaleRepository>(),
       ));
+  
 
   locator.registerFactory(() => OnBoardingBloc(
         setOnBoarding: locator<SetOnBoarding>(),
@@ -208,10 +230,11 @@ Future<void> setupLocator() async {
         setTheme: locator<SetTheme>(),
         getTheme: locator<GetTheme>(),
       ));
+
   locator.registerFactory(() => LoginBloc(
         login: locator<Login>(),
-        getSavedLogin: locator<GetSavedLogin>(),
-        deleteSavedLogin: locator<DeleteSavedLogin>(),
         localLogin: locator<LocalLogin>(),
+        googleLogin: locator<GoogleLogin>(),
       ));
+  locator.registerFactory(() => SettingsBloc(logout: locator<Logout>()));
 }

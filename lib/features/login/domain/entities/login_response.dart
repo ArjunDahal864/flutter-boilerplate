@@ -1,19 +1,27 @@
 import 'package:equatable/equatable.dart';
 
 abstract class LoginResponse extends Equatable {
-  final String token;
-  final String userId;
-  final String refreshToken;
-  final int expiresIn;
-  final String role;
-  
+  final String emailAddress;
+  final String userDisplayName;
+  final String userPhotoUrl;
+  final String userID;
+  final String userIdToken;
+  final String userAccessToken;
   const LoginResponse(
-      {required this.token,
-      required this.userId,
-      required this.refreshToken,
-      required this.role,
-      required this.expiresIn});
+      {required this.emailAddress,
+      required this.userDisplayName,
+      required this.userPhotoUrl,
+      required this.userID,
+      required this.userIdToken,
+      required this.userAccessToken});
 
   @override
-  List<Object?> get props => [token, userId, refreshToken, expiresIn, role];
+  List<Object?> get props => [
+        emailAddress,
+        userDisplayName,
+        userPhotoUrl,
+        userID,
+        userIdToken,
+        userAccessToken,
+      ];
 }

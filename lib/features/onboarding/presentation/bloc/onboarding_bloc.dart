@@ -25,6 +25,7 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
             : emit(OnBoardingInitialState()),
       );
     });
+
     on<OnBoardingEvent>((event, emit) async {
       var response = await getOnBoarding(NoParams());
       response.fold(

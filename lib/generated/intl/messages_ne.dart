@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dashboard": MessageLookupByLibrary.simpleMessage("ड्यासबोर्ड"),
         "language": MessageLookupByLibrary.simpleMessage("भाषा"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("हल्का विषयवस्तु"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout Nepali ma "),
         "profile": MessageLookupByLibrary.simpleMessage("प्रोफाइल"),
         "setting": MessageLookupByLibrary.simpleMessage("सेटिङ"),
         "theme": MessageLookupByLibrary.simpleMessage("विषयवस्तु"),

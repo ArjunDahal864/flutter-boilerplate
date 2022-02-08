@@ -30,10 +30,10 @@ dependencies:
   # ================ analytics =============
   logger:
   # core for firebase
-#  firebase_core:
+  firebase_core:
 
   # for overall analytics (e.g. notification clicks and app opens)
-#  firebase_analytics:
+  firebase_analytics:
 
   # for crash reporting
 #  firebase_crashlytics:
@@ -55,6 +55,8 @@ dependencies:
   local_auth:
   google_sign_in:
   flutter_facebook_auth:
+  firebase_auth:
+
 
   # =============== hardware ===============
   geolocator:

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'features/onboarding/presentation/bloc/onboarding_bloc.dart';
+import 'features/settings/presentation/bloc/settings_bloc.dart';
 import 'features/theme/presentation/bloc/theme_bloc.dart';
 import 'injector.dart';
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => locator<LoginBloc>()),
         BlocProvider(create: (_) => locator<ThemeBloc>()),
         BlocProvider(create: (_) => locator<LocaleBloc>()),
+        BlocProvider(create: (_) => locator<SettingsBloc>()),
       ],
       child: const Application(),
     );

@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dashboard": MessageLookupByLibrary.simpleMessage("dashboard"),
         "language": MessageLookupByLibrary.simpleMessage("language"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light Theme"),
+        "logout": MessageLookupByLibrary.simpleMessage("logout"),
         "profile": MessageLookupByLibrary.simpleMessage("profile"),
         "setting": MessageLookupByLibrary.simpleMessage("setting"),
         "theme": MessageLookupByLibrary.simpleMessage("theme"),

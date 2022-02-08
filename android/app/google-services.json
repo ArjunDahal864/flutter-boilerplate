@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "721785518131",
+    "project_id": "boiler-100ca",
+    "storage_bucket": "boiler-100ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721785518131:android:fb473f1c35e90b2d26cb46",
+        "android_client_info": {
+          "package_name": "com.example.boiler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721785518131-5mi8sahermvhrk2konidrb5r6pad6k7i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.boiler",
+            "certificate_hash": "b6e498c29c6a04f6b8b01769169f51d4969c5bfc"
+          }
+        },
+        {
+          "client_id": "721785518131-fhcjk3klt86q4trk6ulb6p6t2236sa2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOL-GL6Z4Cyjv5jzZY5OBDoW8ND2uz50U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721785518131-fhcjk3klt86q4trk6ulb6p6t2236sa2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,8 +3,8 @@ import 'package:boiler/core/utils/constants.dart';
 import 'package:dio/dio.dart';
 
 class NetworkCalls {
-  final Dio dio;
-  NetworkCalls({required this.dio});
+  Dio dio;
+  NetworkCalls({required this.dio,});
 
 
   // get call for the api
